@@ -1,0 +1,85 @@
+---
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+const categories = [
+  {
+    title: "Frontend",
+    color: "bg-racing-pink",
+    skills: [
+      { name: "Astro", level: 90 },
+      { name: "React / Next.js", level: 88 },
+      { name: "Tailwind CSS", level: 92 },
+      { name: "TypeScript", level: 85 },
+    ],
+  },
+  {
+    title: "Backend & Data",
+    color: "bg-grand-prix-sky",
+    skills: [
+      { name: "Node.js", level: 84 },
+      { name: "PostgreSQL", level: 78 },
+      { name: "GraphQL", level: 72 },
+      { name: "REST APIs", level: 90 },
+    ],
+  },
+  {
+    title: "Craft & Tooling",
+    color: "bg-finish-gold",
+    skills: [
+      { name: "Design systems", level: 86 },
+      { name: "CI/CD", level: 80 },
+      { name: "Testing", level: 74 },
+      { name: "Accessibility", level: 82 },
+    ],
+  },
+];
+---
+
+<section id="skills" class="scroll-mt-20 py-20">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="max-w-2xl">
+      <Badge variant="secondary">Skills</Badge>
+      <h2 class="mt-4 font-heading text-3xl font-black tracking-tight sm:text-4xl">
+        Training regimen
+      </h2>
+      <p class="mt-4 text-lg text-muted-foreground">
+        Sample ratings only. Update these values to reflect your experience before publishing.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      {categories.map((category) => (
+        <Card>
+          <CardHeader>
+            <CardTitle class="flex items-center gap-2 font-heading text-lg">
+              <span class={`inline-block h-2.5 w-2.5 rounded-full ${category.color}`} aria-hidden="true"></span>
+              {category.title}
+            </CardTitle>
+          </CardHeader>
+          <CardContent class="space-y-5">
+            {category.skills.map((skill) => (
+              <div>
+                <div class="mb-1.5 flex items-center justify-between text-sm">
+                  <span class="font-medium">{skill.name}</span>
+                  <span class="text-muted-foreground">{skill.level}%</span>
+                </div>
+                <div class="h-2 overflow-hidden rounded-full bg-muted">
+                  <div
+                    class={`h-full rounded-full ${category.color}`}
+                    style={`width: ${skill.level}%`}
+                  role="progressbar"
+                  aria-label={`${skill.name} proficiency`}
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  aria-valuenow={skill.level}
+                  ></div>
+                </div>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>

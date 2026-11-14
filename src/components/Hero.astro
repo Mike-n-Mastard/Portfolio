@@ -1,0 +1,64 @@
+---
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+
+---
+
+<section id="top" class="relative overflow-hidden">
+  <!-- decorative gradient backdrop -->
+  <div
+    class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60rem_40rem_at_15%_-10%,var(--color-grand-prix-sky),transparent),radial-gradient(50rem_35rem_at_110%_10%,var(--color-racing-pink),transparent),radial-gradient(40rem_30rem_at_50%_120%,var(--color-finish-gold),transparent)] opacity-60"
+    aria-hidden="true"
+  ></div>
+
+  <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 py-20 sm:px-6 md:grid-cols-[1.2fr_0.8fr] md:py-28">
+    <div>
+      <Badge variant="secondary" class="gap-2">
+        <span class="inline-block h-2 w-2 rounded-full bg-racing-pink" aria-hidden="true"></span>
+        Portfolio template — personalize before publishing
+      </Badge>
+
+      <h1 class="mt-5 font-heading text-4xl font-black leading-tight tracking-tight sm:text-5xl md:text-6xl">
+        Giddy up, let's build{" "}
+        <span class="bg-gradient-to-r from-racing-pink via-steeple-purple to-grand-prix-sky bg-clip-text text-transparent">
+          remarkable web
+        </span>{" "}
+        experiences.
+      </h1>
+
+      <p class="mt-5 max-w-xl text-lg text-muted-foreground">
+        I'm <strong class="font-semibold text-foreground">Touka Kiseki</strong>. Add a short
+        introduction here that reflects your actual role, experience, and interests.
+      </p>
+
+      <div class="mt-8 flex flex-wrap items-center gap-3">
+        <Button asChild size="lg">
+          <a href="#projects">View my projects</a>
+        </Button>
+        <Button asChild size="lg" variant="outline">
+          <a href="#contact">Let's talk</a>
+        </Button>
+      </div>
+    </div>
+
+    <!-- placeholder portrait card -->
+    <div class="relative mx-auto w-full max-w-sm">
+      <div class="rounded-3xl border border-border bg-card p-6 shadow-lg">
+        <div class="grid h-44 place-items-center rounded-2xl bg-gradient-to-br from-grand-prix-sky to-steeple-purple text-6xl text-white">
+          <span aria-hidden="true">🐎</span>
+        </div>
+        <div class="mt-5 flex items-center justify-between">
+          <div>
+            <p class="font-heading font-bold">Portrait placeholder</p>
+            <p class="text-sm text-muted-foreground">Touka Kiseki</p>
+          </div>
+          <span class="inline-flex h-3 w-3 rounded-full bg-turf-green" aria-hidden="true"></span>
+        </div>
+        <Separator class="my-4" />
+        <p class="text-sm text-muted-foreground">Replace this placeholder with your portrait and caption.</p>
+      </div>
+    </div>
+  </div>
+
+</section>

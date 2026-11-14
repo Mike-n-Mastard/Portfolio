@@ -1,0 +1,56 @@
+---
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+
+const highlights = [
+  {
+    icon: "🏁",
+    title: "Performance-first",
+    text: "Sites that load faster than a photo finish — sub-second LCP targets, zero wasted requests.",
+  },
+  {
+    icon: "🎨",
+    title: "Design systems",
+    text: "Component libraries that scale like a championship team, built on shadcn/ui principles.",
+  },
+  {
+    icon: "🧠",
+    title: "Product thinking",
+    text: "From paddock to podium — I pair engineering with strategy to ship things people love.",
+  },
+];
+---
+
+<section id="about" class="scroll-mt-20 py-20">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="max-w-2xl">
+      <Badge variant="secondary">Profile</Badge>
+      <h2 class="mt-4 font-heading text-3xl font-black tracking-tight sm:text-4xl">
+        About the trainer
+      </h2>
+      <p class="mt-4 text-lg text-muted-foreground">
+        Add your professional summary here. Describe your background, the work you enjoy, and the
+        value you bring to a team.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      {highlights.map((item) => (
+        <Card class="transition-shadow hover:shadow-lg">
+          <CardHeader>
+            <span class="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-racing-pink/15 to-grand-prix-sky/15 text-2xl">
+              <span aria-hidden="true">{item.icon}</span>
+            </span>
+            <CardTitle class="mt-3 font-heading text-lg">{item.title}</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <CardDescription class="text-sm leading-relaxed">{item.text}</CardDescription>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+
+    <Separator class="mt-16" />
+  </div>
+</section>
